@@ -1,3 +1,5 @@
+// components/Footer.jsx
+
 export default function Footer() {
   return (
     <footer style={styles.footer}>
@@ -7,7 +9,7 @@ export default function Footer() {
           REST Countries API
         </a>
       </p>
-      <p style={styles.text}>© 2024 World Explorer. All rights reserved.</p>
+      <p style={styles.text}>© 2026 World Explorer. All rights reserved.</p>
     </footer>
   );
 }

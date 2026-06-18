@@ -22,10 +22,12 @@ img {
   max-width: 100%;
 }
 
-/* Responsive - mobile screens */
+a {
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
-    gap: 16px;
   }
 }

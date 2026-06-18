@@ -1,12 +1,9 @@
 import Link from "next/link";
-
 export default function HomePage() {
   return (
     <div>
-      {/* Hero Section */}
       <section style={styles.hero}>
         <h1 style={styles.title}>🌍 World Explorer</h1>
-
         <p style={styles.subtitle}>
           Explore countries around the world and learn about their flags,
           capitals, populations, currencies, and languages.
@@ -15,21 +12,22 @@ export default function HomePage() {
           Explore Countries →
         </Link>
       </section>
+
       <section style={styles.features}>
         <h2 style={styles.featuresTitle}>What You Can Do</h2>
         <div style={styles.featureGrid}>
           <div style={styles.featureCard}>
-            🗺️
+            <div style={{ fontSize: "40px" }}>🗺️</div>
             <h3>Browse Countries</h3>
             <p>See all countries with flags and basic info</p>
           </div>
           <div style={styles.featureCard}>
-            🔍
+            <div style={{ fontSize: "40px" }}>🔍</div>
             <h3>Search Countries</h3>
             <p>Find any country by name instantly</p>
           </div>
           <div style={styles.featureCard}>
-            📊
+            <div style={{ fontSize: "40px" }}>📊</div>
             <h3>View Details</h3>
             <p>See population, languages, currencies and more</p>
           </div>

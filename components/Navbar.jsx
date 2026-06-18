@@ -1,9 +1,13 @@
+// components/Navbar.jsx
+
 import Link from "next/link";
 
 export default function Navbar() {
   return (
     <nav style={styles.nav}>
-      <div style={styles.logo}>🌍 World Explorer</div>
+      <Link href="/" style={styles.logo}>
+        🌍 World Explorer
+      </Link>
 
       <div style={styles.links}>
         <Link href="/" style={styles.link}>
@@ -31,14 +35,19 @@ const styles = {
     padding: "16px 32px",
     backgroundColor: "#1a1a2e",
     color: "white",
+    flexWrap: "wrap",
+    gap: "16px",
   },
   logo: {
     fontSize: "24px",
     fontWeight: "bold",
+    color: "white",
+    textDecoration: "none",
   },
   links: {
     display: "flex",
     gap: "24px",
+    flexWrap: "wrap",
   },
   link: {
     color: "white",

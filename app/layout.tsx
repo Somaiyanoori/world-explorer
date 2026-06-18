@@ -1,17 +1,20 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import "./globals.css";
-
 
 export const metadata = {
   title: "World Explorer",
   description: "A Next.js country explorer project",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <body>
+      <body suppressHydrationWarning={true}>
         <Navbar />
         <main>{children}</main>
         <Footer />

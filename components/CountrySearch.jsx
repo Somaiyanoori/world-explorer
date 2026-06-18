@@ -1,3 +1,4 @@
+// components/CountrySearch.jsx
 "use client";
 
 import { useState } from "react";
@@ -12,29 +13,25 @@ export default function CountrySearch({ countries }) {
 
   return (
     <div>
-      {/* Search Input Box */}
       <input
         type="text"
         placeholder="Search for a country... (e.g. Japan, Germany)"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        // onChange fires every time user types a letter
         style={styles.input}
       />
 
-      {/* Show how many results found */}
       <p style={styles.resultCount}>
         {searchTerm
           ? `Found ${filtered.length} countries matching "${searchTerm}"`
           : `Showing all ${countries.length} countries`}
       </p>
 
-      {/* Show results */}
       <div style={styles.grid}>
         {filtered.map((country) => (
           <div key={country.cca3} style={styles.card}>
             <img
-              src={country.flags.png}
+              src={country.flags?.png || country.flags?.svg}
               alt={country.name.common}
               style={styles.flag}
             />
@@ -52,7 +49,6 @@ export default function CountrySearch({ countries }) {
         ))}
       </div>
 
-      {/* No results message */}
       {filtered.length === 0 && searchTerm && (
         <div style={styles.noResults}>
           <p>❌ No countries found matching "{searchTerm}"</p>

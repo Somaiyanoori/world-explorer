@@ -1,15 +1,16 @@
+// components/CountryCard.jsx
+
 import Link from "next/link";
 
 export default function CountryCard({ country }) {
   return (
     <div style={styles.card}>
       <img
-        src={country.flags.png}
+        src={country.flags?.png || country.flags?.svg}
         alt={`Flag of ${country.name.common}`}
         style={styles.flag}
       />
 
-      {/* Country Info */}
       <div style={styles.info}>
         <h2 style={styles.name}>{country.name.common}</h2>
 
@@ -20,7 +21,7 @@ export default function CountryCard({ country }) {
         <p style={styles.detail}>🌍 Region: {country.region}</p>
 
         <p style={styles.detail}>
-          👥 Population: {country.population.toLocaleString()}
+          👥 Population: {country.population?.toLocaleString() || "N/A"}
         </p>
 
         <Link href={`/countries/${country.cca3}`} style={styles.button}>
@@ -38,7 +39,6 @@ const styles = {
     overflow: "hidden",
     backgroundColor: "white",
     boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-    transition: "transform 0.2s",
   },
   flag: {
     width: "100%",
