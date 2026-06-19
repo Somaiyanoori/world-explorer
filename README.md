@@ -17,7 +17,14 @@ World Explorer is a Next.js project that allows users to explore countries aroun
 
 ## API Used
 
-REST Countries API - https://restcountries.com
+This project originally targeted the **REST Countries API** (https://restcountries.com), but the v3.1 endpoint has been **deprecated** during development.
+
+To keep the app functional, the project now uses the same countries dataset hosted on GitHub:
+
+- **Data Source:** https://github.com/mledoze/countries
+- **Flag Images:** https://flagcdn.com
+
+Both are free and require no API key. The data structure is the same as REST Countries.
 
 ## Pages
 
@@ -31,3 +38,21 @@ REST Countries API - https://restcountries.com
 
 npm install
 npm run dev
+
+## Screenshots
+
+### Home Page
+
+![Home Page](./screenshots/home.jpg)
+
+### Countries Page
+
+![Countries Page](./screenshots/countries.jpg)
+
+### Country Details Page
+
+![Country Details](./screenshots/details..jpg)
+
+### Search Page
+
+![Search Page](./screenshots/search.jpg)

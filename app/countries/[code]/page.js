@@ -2,7 +2,8 @@ import Link from "next/link";
 import { getCountryByCode } from "@/lib/getCountries";
 
 export default async function CountryDetailsPage({ params }) {
-  const code = params.code;
+  const { code } = await params;
+
   const country = await getCountryByCode(code);
 
   if (!country) {
@@ -32,9 +33,10 @@ export default async function CountryDetailsPage({ params }) {
     );
   }
 
-  country.languages && typeof country.languages === "object"
-    ? Object.values(country.languages).join(", ")
-    : "No languages listed";
+  const languages =
+    country.languages && typeof country.languages === "object"
+      ? Object.values(country.languages).join(", ")
+      : "No languages listed";
 
   const currencies =
     country.currencies && typeof country.currencies === "object"
@@ -83,7 +85,7 @@ export default async function CountryDetailsPage({ params }) {
       >
         <div>
           <img
-            src={country.flags?.png}
+            src={country.flags?.png || country.flags?.svg}
             alt={`Flag of ${country.name.common}`}
             style={{
               width: "100%",
@@ -105,25 +107,20 @@ export default async function CountryDetailsPage({ params }) {
             {country.name.common}
           </h1>
 
-          <div style={{ marginBottom: "24px" }}>
-            <InfoRow label="Official Name" value={country.name.official} />
-            <InfoRow
-              label="Capital"
-              value={country.capital?.[0] || "No capital"}
-            />
-            <InfoRow label="Region" value={country.region} />
-            <InfoRow label="Subregion" value={country.subregion || "Unknown"} />
-            <InfoRow
-              label="Population"
-              value={country.population?.toLocaleString() || "Unknown"}
-            />
-          </div>
-
-          <div style={{ marginBottom: "32px" }}>
-            <InfoRow label="Languages" value={languages} />
-            <InfoRow label="Currencies" value={currencies} />
-            <InfoRow label="Time Zones" value={timezones} />
-          </div>
+          <InfoRow label="Official Name" value={country.name.official} />
+          <InfoRow
+            label="Capital"
+            value={country.capital?.[0] || "No capital"}
+          />
+          <InfoRow label="Region" value={country.region} />
+          <InfoRow label="Subregion" value={country.subregion || "Unknown"} />
+          <InfoRow
+            label="Population"
+            value={country.population?.toLocaleString() || "Unknown"}
+          />
+          <InfoRow label="Languages" value={languages} />
+          <InfoRow label="Currencies" value={currencies} />
+          <InfoRow label="Time Zones" value={timezones} />
 
           <a
             href={googleMapsLink}
@@ -131,6 +128,7 @@ export default async function CountryDetailsPage({ params }) {
             rel="noopener noreferrer"
             style={{
               display: "inline-block",
+              marginTop: "24px",
               padding: "12px 24px",
               backgroundColor: "#4285f4",
               color: "white",
@@ -140,7 +138,7 @@ export default async function CountryDetailsPage({ params }) {
               fontSize: "16px",
             }}
           >
-            View on Google Maps
+            📍 View on Google Maps
           </a>
         </div>
       </div>
