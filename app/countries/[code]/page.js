@@ -112,10 +112,7 @@ export default async function CountryDetailsPage({ params }) {
               value={country.capital?.[0] || "No capital"}
             />
             <InfoRow label="Region" value={country.region} />
-            <InfoRow
-              label="📍 Subregion"
-              value={country.subregion || "Unknown"}
-            />
+            <InfoRow label="Subregion" value={country.subregion || "Unknown"} />
             <InfoRow
               label="Population"
               value={country.population?.toLocaleString() || "Unknown"}
@@ -143,7 +140,7 @@ export default async function CountryDetailsPage({ params }) {
               fontSize: "16px",
             }}
           >
-            📍 View on Google Maps
+            View on Google Maps
           </a>
         </div>
       </div>

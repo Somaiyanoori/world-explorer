@@ -1,12 +1,10 @@
-// components/Navbar.jsx
-
 import Link from "next/link";
 
 export default function Navbar() {
   return (
     <nav style={styles.nav}>
       <Link href="/" style={styles.logo}>
-        🌍 World Explorer
+        World Explorer
       </Link>
 
       <div style={styles.links}>

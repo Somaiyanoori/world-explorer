@@ -1,10 +1,8 @@
-// components/Footer.jsx
-
 export default function Footer() {
   return (
     <footer style={styles.footer}>
       <p style={styles.text}>
-        🌍 World Explorer | Built with Next.js | Data from{" "}
+        World Explorer | Built with Next.js | Data from{" "}
         <a href="https://restcountries.com" target="_blank" style={styles.link}>
           REST Countries API
         </a>

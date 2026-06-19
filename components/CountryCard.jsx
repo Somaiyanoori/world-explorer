@@ -1,5 +1,3 @@
-// components/CountryCard.jsx
-
 import Link from "next/link";
 
 export default function CountryCard({ country }) {
@@ -15,10 +13,10 @@ export default function CountryCard({ country }) {
         <h2 style={styles.name}>{country.name.common}</h2>
 
         <p style={styles.detail}>
-          🏛️ Capital: {country.capital?.[0] || "No capital"}
+          Capital: {country.capital?.[0] || "No capital"}
         </p>
 
-        <p style={styles.detail}>🌍 Region: {country.region}</p>
+        <p style={styles.detail}>Region: {country.region}</p>
 
         <p style={styles.detail}>
           👥 Population: {country.population?.toLocaleString() || "N/A"}

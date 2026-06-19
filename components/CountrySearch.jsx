@@ -1,4 +1,4 @@
-// components/CountrySearch.jsx
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useState } from "react";
@@ -38,9 +38,9 @@ export default function CountrySearch({ countries }) {
             <div style={styles.cardInfo}>
               <h3 style={styles.name}>{country.name.common}</h3>
               <p style={styles.detail}>
-                🏛️ {country.capital?.[0] || "No capital"}
+                {country.capital?.[0] || "No capital"}
               </p>
-              <p style={styles.detail}>🌍 {country.region}</p>
+              <p style={styles.detail}>{country.region}</p>
               <Link href={`/countries/${country.cca3}`} style={styles.link}>
                 View Details →
               </Link>
